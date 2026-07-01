@@ -242,7 +242,7 @@ onUnmounted(() => {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(
-    rgba(251, 191, 36, 0.15) 1.5px,
+    rgba(251, 191, 36, 0.15) 10px,
     transparent 1.5px
   );
   background-size: 32px 32px;
