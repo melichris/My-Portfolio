@@ -26,8 +26,8 @@
             <span class="info-icon">✉</span>
             <div>
               <p class="info-label">Email</p>
-              <a href="mailto:youremail@example.com" class="info-value"
-                >youremail@example.com</a
+              <a href="mailto:melichris.work@gmail.com" class="info-value"
+                >melichris.work@gmail.com</a
               >
             </div>
           </div>
@@ -35,8 +35,8 @@
             <span class="info-icon">☎</span>
             <div>
               <p class="info-label">Phone</p>
-              <a href="tel:+237000000000" class="info-value"
-                >+237 XXX XXX XXX</a
+              <a href="tel:+237653369392" class="info-value"
+                >+237 653 369 392</a
               >
             </div>
           </div>
@@ -50,29 +50,33 @@
 
           <div class="info-socials">
             <a
-              href="#"
+              href="https://github.com/melichris"
               target="_blank"
               rel="noopener"
               aria-label="GitHub"
               class="social-circle"
-              >GH</a
             >
+              <svg viewBox="0 0 24 24" width="30" height="30">
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.85v2.75c0 .26.16.57.67.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"
+                />
+              </svg>
+            </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/meli-christian/"
               target="_blank"
               rel="noopener"
               aria-label="LinkedIn"
               class="social-circle"
-              >Li</a
             >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="Twitter"
-              class="social-circle"
-              >Tw</a
-            >
+              <svg viewBox="0 0 24 24" width="30" height="30">
+                <path
+                  fill="currentColor"
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -108,9 +112,18 @@
             rows="5"
             required
           ></textarea>
-          <button type="submit" class="submit-btn">
-            Send Message <span class="arrow">→</span>
+
+          <button type="submit" class="submit-btn" :disabled="isSubmitting">
+            {{ isSubmitting ? "Sending..." : "Send Message" }}
+            <span class="arrow" v-if="!isSubmitting">→</span>
           </button>
+
+          <p v-if="submitStatus === 'success'" class="form-feedback success">
+            ✓ Message sent successfully — I'll get back to you soon!
+          </p>
+          <p v-if="submitStatus === 'error'" class="form-feedback error">
+            ✕ Something went wrong. Please try again or email me directly.
+          </p>
         </form>
       </div>
     </div>
@@ -121,13 +134,44 @@
 import { ref, reactive, onMounted, onUnmounted } from "vue";
 
 const form = reactive({ name: "", email: "", subject: "", message: "" });
+const isSubmitting = ref(false);
+const submitStatus = ref(null); // null | 'success' | 'error'
 
-function handleSubmit() {
-  // Placeholder — wire up to an email service (e.g. Formspree, EmailJS) later
-  console.log("Form submitted:", form);
-  alert(
-    "Message sent! (connect this to a real email service before deploying)",
-  );
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvzjwljb"; // ← replace with your real endpoint
+
+async function handleSubmit() {
+  isSubmitting.value = true;
+  submitStatus.value = null;
+
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      }),
+    });
+
+    if (response.ok) {
+      submitStatus.value = "success";
+      form.name = "";
+      form.email = "";
+      form.subject = "";
+      form.message = "";
+    } else {
+      submitStatus.value = "error";
+    }
+  } catch (err) {
+    submitStatus.value = "error";
+  } finally {
+    isSubmitting.value = false;
+  }
 }
 
 const sectionRef = ref(null);
@@ -335,6 +379,19 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+}
+
+.form-feedback {
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.25rem;
+}
+
+.form-feedback.success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
 }
 
 .form-row {

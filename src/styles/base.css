@@ -52,3 +52,30 @@ button {
 .accent-text {
   color: var(--color-accent);
 }
+
+/* Reduce/disable decorative animations on mobile for performance */
+@media (max-width: 1126px) {
+  .grid-pattern,
+  .grid-pattern-alt,
+  .dot-field,
+  .dot-field-alt,
+  .orb,
+  .proj-orb,
+  .serv-orb,
+  .skills-orb,
+  .pulse-ring,
+  .sparkle,
+  .card-glow {
+    animation: none !important;
+  }
+}
+
+/* Respect users who've asked for reduced motion at the OS level */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -9,6 +9,7 @@
     <ServicesSection />
     <ContactSection />
   </main>
+  <Footer />
 </template>
 
 <script setup>
@@ -19,4 +20,5 @@ import SkillsSection from "./components/sections/SkillsSection.vue";
 import ProjectsSection from "./components/sections/ProjectsSection.vue";
 import ServicesSection from "./components/sections/ServicesSection.vue";
 import ContactSection from "./components/sections/ContactSection.vue";
+import Footer from "./components/layout/Footer.vue";
 </script>
