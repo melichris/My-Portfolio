@@ -1,5 +1,8 @@
 <template>
   <section id="about" class="about">
+    <div class="about-fade-in"></div>
+    <!-- Motion background layer -->
+    <div class="about-bg"></div>
     <div class="section-container about-grid">
       <!-- Left: heading + text -->
       <div class="about-text">
@@ -71,9 +74,61 @@
 <style scoped>
 .about {
   background-color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Motion background layer */
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(251, 191, 36, 0.18) 0%,
+    rgba(55, 65, 81, 0.45) 25%,
+    rgba(251, 191, 36, 0.1) 50%,
+    rgba(55, 65, 81, 0.45) 75%,
+    rgba(251, 191, 36, 0.18) 100%
+  );
+  background-size: 300% 300%;
+  animation: waveShift 16s ease-in-out infinite;
+  /* mask-image lines removed */
+}
+.about-fade-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary) 0%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes waveShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Make sure content sits above the wave */
+
 .about-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: var(--space-xl);

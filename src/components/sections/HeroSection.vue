@@ -104,6 +104,28 @@
         <div class="float-icon icon-7"><span>CSS</span></div> -->
       </div>
     </div>
+
+    <div class="hero-fade"></div>
+
+    <!-- Wave divider -->
+    <!-- <div class="wave-divider">
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#111827" />
+            <stop offset="100%" stop-color="#374151" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,48 L1440,120 L0,120 Z"
+          fill="url(#waveGradient)"
+        />
+      </svg>
+    </div> -->
   </section>
 </template>
 
@@ -185,6 +207,21 @@ onUnmounted(() => {
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
+}
+
+.hero-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-primary) 100%
+  );
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -469,6 +506,21 @@ onUnmounted(() => {
     transform: translateY(-12px);
   }
 }
+
+/* .wave-divider {
+  position: absolute; */
+/* bottom: -1px; prevents a 1px gap/seam from sub-pixel rounding */
+/* left: 0; */
+/* width: 100%; */
+/* line-height: 0; removes inline-svg whitespace gap */
+/* z-index: 1; above hero-bg, but content itself sits at z-index 1 too — fine since it's at the very bottom edge */
+/* } */
+
+/* .wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 90px;
+} */
 
 /* Responsive */
 @media (max-width: 900px) {
