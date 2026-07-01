@@ -1,7 +1,6 @@
 <template>
   <section id="projects" class="projects" ref="sectionRef">
     <div class="projects-fade-in"></div>
-
     <div class="projects-bg">
       <div class="grid-pattern-alt"></div>
       <div class="proj-orb proj-orb-1"></div>
@@ -70,6 +69,7 @@
   </section>
 </template>
 
+<
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
@@ -78,28 +78,46 @@ const projects = [
     name: "Sentinel Lite",
     tag: "Frontend Dashboard",
     description:
-      "A production-quality security monitoring dashboard built from scratch across a 10-phase build: authentication, protected routing, a collapsible sidebar, auto-refreshing stats, filterable alerts with debounced search, a full CRUD devices module, dark mode settings, and a global toast notification system.",
+      "A production-quality security monitoring dashboard built from scratch: authentication, protected routing, a collapsible sidebar, auto-refreshing stats, filterable alerts with debounced search, a full CRUD devices module, dark mode settings, and a global toast notification system.",
     tech: ["Vue 3", "Pinia", "Vue Router", "Axios", "Tailwind CSS"],
-    github: "#",
+    github: "https://github.com/melichris/sentinel-lite",
     live: "#",
   },
   {
-    name: "Sentinel App",
-    tag: "Full-Stack Security System",
+    name: "Driver Hiring Management System",
+    tag: "Frontend Application",
     description:
-      "A full-stack authentication system built around security best practices: JWT with refresh token rotation, bcrypt password hashing, rate limiting, account lockout, role-based access control, TOTP-based two-factor authentication, audit logging, and session management.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma"],
-    github: "#",
+      "The frontend for a driver hiring management platform, built to streamline how driver applications and hiring workflows are handled.",
+    tech: ["CSS", "JavaScript"],
+    github: "https://github.com/melichris/Driver_Hiring_Management_System",
     live: "#",
   },
   {
-    name: "E-Commerce Platform",
-    tag: "Full-Stack E-Commerce",
+    name: "Face Mask Detection",
+    tag: "AI / Computer Vision",
     description:
-      "A Vue 3 e-commerce application with Stripe payment integration, covering product catalog, cart, and checkout flows across a structured client/server architecture.",
-    tech: ["Vue 3", "JavaScript", "Stripe", "Node.js"],
-    github: "#",
-    live: "#",
+      "A biometric facial recognition system that detects whether a user is wearing a face mask, using computer vision and deep learning for real-time verification.",
+    tech: ["Python", "OpenCV", "TensorFlow", "Keras"],
+    github: "https://github.com/melichris/Face_Mask_Detection",
+    live: null,
+  },
+  {
+    name: "Exam Surveillance System with AI",
+    tag: "AI / Malpractice Detection",
+    description:
+      "An AI-driven exam surveillance system designed to detect malpractice during examinations, using computer vision and deep learning to support automated academic integrity monitoring.",
+    tech: ["Python", "OpenCV", "TensorFlow", "Keras", "PyTorch", "Mediapipe"],
+    github: "https://github.com/melichris/exam_surveillance_system_with_AI",
+    live: null,
+  },
+  {
+    name: "MCQ Managements System",
+    tag: "Multiple Choice Question Management",
+    description:
+      "A comprehensive system for managing multiple choice questions, including creation, editing, and automated grading capabilities.",
+    tech: ["java", "Spring Boot", "MySQL", "Thymeleaf"],
+    github: "https://github.com/melichris/MCQ_Management_System",
+    live: null,
   },
 ];
 
@@ -118,7 +136,6 @@ onMounted(() => {
     },
     { threshold: 0.15 },
   );
-
   sectionRef.value
     .querySelectorAll(".reveal")
     .forEach((el) => observer.observe(el));
@@ -253,12 +270,6 @@ onUnmounted(() => {
   color: var(--color-text-body);
   max-width: 560px;
   margin-bottom: var(--space-xl);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
 }
 
 /* Reveal (reuse pattern) */
@@ -402,6 +413,12 @@ onUnmounted(() => {
 .link-btn-primary:hover {
   opacity: 0.9;
   color: var(--color-primary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
 }
 
 /* Responsive */

@@ -25,7 +25,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="/cv-meli-christian.pdf" class="btn-primary" download>
+          <a href="/Meli_Christian_SWE_CV.pdf" class="btn-primary" download>
             Download CV
             <span class="icon-download">↓</span>
           </a>
@@ -37,7 +37,7 @@
         <div class="hero-social">
           <span class="follow-label">Follow Me</span>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/melichris"
             target="_blank"
             rel="noopener"
             aria-label="GitHub"
@@ -50,7 +50,7 @@
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/meli-christian/"
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn"
@@ -62,20 +62,7 @@
               />
             </svg>
           </a>
-          <a
-            href="https://twitter.com/yourusername"
-            target="_blank"
-            rel="noopener"
-            aria-label="Twitter"
-          >
-            <svg viewBox="0 0 24 24" width="30" height="30">
-              <path
-                fill="currentColor"
-                d="M23 4.5c-.85.38-1.76.63-2.7.75a4.7 4.7 0 0 0 2.06-2.6 9.35 9.35 0 0 1-2.98 1.14 4.66 4.66 0 0 0-7.94 4.25A13.22 13.22 0 0 1 1.67 3.15a4.66 4.66 0 0 0 1.44 6.22 4.6 4.6 0 0 1-2.1-.58 4.66 4.66 0 0 0 3.74 4.63 4.65 4.65 0 0 1-2.1.08 4.66 4.66 0 0 0 4.35 3.23A9.36 9.36 0 0 1 1 18.58a13.19 13.19 0 0 0 7.15 2.1c8.58 0 13.27-7.11 13.27-13.28 0-.2 0-.4-.02-.6A9.4 9.4 0 0 0 23 4.5z"
-              />
-            </svg>
-          </a>
-          <a href="mailto:youremail@example.com" aria-label="Email">
+          <a href="mailto:melichris.work@gmail.com" aria-label="Email">
             <svg viewBox="0 0 24 24" width="30" height="30">
               <path
                 fill="currentColor"
