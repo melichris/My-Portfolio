@@ -1,0 +1,20 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #111827;      /* Black - main background */
+  --color-secondary: #374151;    /* Charcoal - cards/sections */
+  --color-accent: #FBBF24;       /* Gold - highlights, CTAs */
+  --color-white: #FFFFFF;
+  --color-text-muted: #9CA3AF;   /* Lightened slate gray for dark bg readability */
+  --color-text-body: #D1D5DB;    /* Body text on dark background */
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
