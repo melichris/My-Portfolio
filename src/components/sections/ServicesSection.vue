@@ -219,7 +219,7 @@ onUnmounted(() => {
   border-color: rgba(251, 191, 36, 0.4);
 }
 
-..service-card {
+.service-card {
   position: relative;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(16px);
