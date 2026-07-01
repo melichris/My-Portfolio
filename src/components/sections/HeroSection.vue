@@ -77,7 +77,7 @@
       <div class="hero-photo-wrap">
         <div class="glow"></div>
         <img
-          src="../../assets/profile.jpg"
+          src="../../assets/profile.png"
           alt="Meli Christian"
           class="hero-photo"
         />
