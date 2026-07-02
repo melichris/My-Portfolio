@@ -7,17 +7,20 @@
         class="orb orb-1"
         :style="{
           transform: `translate(${parallaxX * -12}px, ${parallaxY * -12}px)`,
-        }"></div>
+        }"
+      ></div>
       <div
         class="orb orb-2"
         :style="{
           transform: `translate(${parallaxX * 10}px, ${parallaxY * 10}px)`,
-        }"></div>
+        }"
+      ></div>
       <div
         class="orb orb-3"
         :style="{
           transform: `translate(${parallaxX * -8}px, ${parallaxY * 8}px)`,
-        }"></div>
+        }"
+      ></div>
     </div>
 
     <div class="hero-container" :class="{ 'is-loaded': heroLoaded }">
@@ -60,29 +63,34 @@
             href="https://github.com/melichris"
             target="_blank"
             rel="noopener"
-            aria-label="GitHub">
+            aria-label="GitHub"
+          >
             <svg viewBox="0 0 24 24" width="30" height="30">
               <path
                 fill="currentColor"
-                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.85v2.75c0 .26.16.57.67.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z" />
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.85v2.75c0 .26.16.57.67.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"
+              />
             </svg>
           </a>
           <a
             href="https://www.linkedin.com/in/meli-christian/"
             target="_blank"
             rel="noopener"
-            aria-label="LinkedIn">
+            aria-label="LinkedIn"
+          >
             <svg viewBox="0 0 24 24" width="30" height="30">
               <path
                 fill="currentColor"
-                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+              />
             </svg>
           </a>
           <a href="mailto:melichris.work@gmail.com" aria-label="Email">
             <svg viewBox="0 0 24 24" width="30" height="30">
               <path
                 fill="currentColor"
-                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+              />
             </svg>
           </a>
         </div>
@@ -94,12 +102,14 @@
         :style="{
           '--anim-delay': '0.3s',
           transform: `translate(${parallaxX * 8}px, ${parallaxY * 8}px)`,
-        }">
+        }"
+      >
         <div class="glow"></div>
         <img
           src="../../assets/profile-bg.png"
           alt="Meli Christian"
-          class="hero-photo" />
+          class="hero-photo"
+        />
 
         <div
           v-for="(icon, index) in orbitIcons"
@@ -111,12 +121,14 @@
             color: icon.color,
             '--icon-color': icon.color,
             '--i': index,
-          }">
+          }"
+        >
           <svg
             viewBox="0 0 24 24"
             width="70"
             height="70"
-            v-html="icon.svg"></svg>
+            v-html="icon.svg"
+          ></svg>
         </div>
       </div>
     </div>
@@ -125,7 +137,8 @@
     <a
       href="#about"
       class="scroll-indicator"
-      aria-label="Scroll to About section">
+      aria-label="Scroll to About section"
+    >
       <span class="scroll-text">Scroll</span>
       <span class="scroll-chevron">⌄</span>
     </a>
@@ -715,11 +728,6 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
   .float-icon:nth-child(3n) {
     display: none;
   }
