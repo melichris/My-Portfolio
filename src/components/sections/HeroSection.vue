@@ -510,10 +510,10 @@ onUnmounted(() => {
 } */
 
 /* Responsive */
+
 @media (max-width: 900px) {
   .hero-container {
     grid-template-columns: 1fr;
-    text-align: center;
   }
 
   .hero-photo-wrap {
@@ -526,6 +526,56 @@ onUnmounted(() => {
 
   .hero-social {
     justify-content: center;
+  }
+
+  /* NEW — scale text and photo down so nothing overflows the viewport */
+  .hero-name {
+    font-size: 2.75rem;
+  }
+
+  .hero-role,
+  .typed-text {
+    font-size: 1.25rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .hero-photo,
+  .glow {
+    width: 260px;
+    height: 260px;
+  }
+
+  .float-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2.1rem;
+  }
+
+  .hero-role,
+  .typed-text {
+    font-size: 1.05rem;
+  }
+
+  .hero-photo,
+  .glow {
+    width: 210px;
+    height: 210px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
   }
 }
 </style>
