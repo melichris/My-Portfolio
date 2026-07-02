@@ -3,7 +3,7 @@
     <div class="navbar-container">
       <!-- Logo -->
       <a href="#home" class="navbar-logo">
-        <img src="../../assets/logo1.png" alt="logo" class="logo-img" />
+        <img src="../../assets/logo2.png" alt="logo" class="logo-img" />
         <div class="logo-text">
           <span class="logo-name"
             >MELI <span class="accent-text">CHRISTIAN</span></span
@@ -11,6 +11,11 @@
           <span class="logo-tagline">FULL STACK DEVELOPER</span>
         </div>
       </a>
+
+      <div
+        class="backdrop"
+        :class="{ open: menuOpen }"
+        @click="closeMenu"></div>
 
       <!-- Desktop Nav Links -->
       <nav class="navbar-links" :class="{ open: menuOpen }">
@@ -20,8 +25,7 @@
           :href="`#${link.id}`"
           class="nav-link"
           :class="{ active: activeSection === link.id }"
-          @click="closeMenu"
-        >
+          @click="closeMenu">
           {{ link.label }}
         </a>
       </nav>
@@ -33,8 +37,7 @@
       <button
         class="menu-toggle"
         @click="menuOpen = !menuOpen"
-        aria-label="Toggle menu"
-      >
+        aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
@@ -194,25 +197,88 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
   height: 2px;
   background-color: var(--color-white);
 }
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
 
-/* Mobile */
+.backdrop.open {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (max-width: 768px) {
   .navbar-links {
     position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
+    top: 76px;
+    left: 4vw;
+    height: auto;
+    width: fit-content;
+    min-width: 200px;
+    max-width: 260px;
     background-color: var(--color-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) 0;
-    transform: translateY(-150%);
-    transition: transform 0.3s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    transform-origin: top left;
+    transform: scale(0.95) translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+    z-index: 1000;
   }
 
   .navbar-links.open {
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    position: relative;
+    width: 100%;
+    padding-left: 0;
+    transition:
+      transform 0.25s ease,
+      padding-left 0.25s ease,
+      color 0.25s ease;
+    border-bottom: none;
+  }
+
+  .nav-link::before {
+    content: "→";
+    position: absolute;
+    left: -18px;
+    opacity: 0;
+    transition:
+      opacity 0.25s ease,
+      left 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+    transform: translateX(12px);
+  }
+
+  .nav-link:hover::before {
+    opacity: 1;
+    left: -20px;
   }
 
   .hire-me-btn {
