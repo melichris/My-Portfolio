@@ -658,11 +658,11 @@ onUnmounted(() => {
 
 .glow {
   position: absolute;
-  width: 520px;
-  height: 520px;
+  width: 320px;
+  height: 320px;
   background: radial-gradient(
     circle,
-    rgba(251, 191, 36, 0.25),
+    rgba(224, 174, 62, 0.25),
     transparent 70%
   );
   border-radius: 50%;
@@ -670,8 +670,8 @@ onUnmounted(() => {
 }
 
 .hero-photo {
-  width: 520px;
-  height: 520px;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--color-accent);
