@@ -15,7 +15,8 @@
       <div
         class="backdrop"
         :class="{ open: menuOpen }"
-        @click="closeMenu"></div>
+        @click="closeMenu"
+      ></div>
 
       <!-- Desktop Nav Links -->
       <nav class="navbar-links" :class="{ open: menuOpen }">
@@ -25,7 +26,8 @@
           :href="`#${link.id}`"
           class="nav-link"
           :class="{ active: activeSection === link.id }"
-          @click="closeMenu">
+          @click="closeMenu"
+        >
           {{ link.label }}
         </a>
       </nav>
@@ -37,7 +39,8 @@
       <button
         class="menu-toggle"
         @click="menuOpen = !menuOpen"
-        aria-label="Toggle menu">
+        aria-label="Toggle menu"
+      >
         <span></span>
         <span></span>
         <span></span>

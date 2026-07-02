@@ -1,8 +1,8 @@
 :root {
   /* Brand Colors */
-  --color-primary: #111827;      /* Black - main background */
+  --color-primary: #0C0D10;      /* Black - main background */
   --color-secondary: #374151;    /* Charcoal - cards/sections */
-  --color-accent: #FBBF24;       /* Gold - highlights, CTAs */
+  --color-accent: #E0AE3E;       /* Gold - highlights, CTAs */
   --color-white: #FFFFFF;
   --color-text-muted: #9CA3AF;   /* Lightened slate gray for dark bg readability */
   --color-text-body: #D1D5DB;    /* Body text on dark background */
